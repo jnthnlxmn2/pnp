@@ -8,7 +8,6 @@
             <fieldset class="form-group">
               <label>Blotter Entry Number</label>
               <input id="blotter" [(ngModel)]="report.bltr_entry_num" name="blotter" class="form-control">
-              <p class="help-block">Example block-level help text here.</p>
             </fieldset>
           </div>
           <div class="col-xl-3">
@@ -26,9 +25,6 @@
               <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
                 Meridian - {{meridian ? "ON" : "OFF"}}
               </button>
-              <div class="alert alert-info mt-3 mb-0">
-                <b>Selected time: </b>{{meridianTime | json}}
-              </div>
             </fieldset>
           </div>
           <div class="col-xl-3">
@@ -45,9 +41,6 @@
                   </div>
                 </div>
               </form>
-              <div class="alert alert-info mb-0">
-                <strong>Model: </strong> {{ model | json }}
-              </div>
             </fieldset>
           </div>
           <div class="col-xl-3">
@@ -495,7 +488,6 @@
             <fieldset class="form-group">
               <label>Under the influence?</label>
               <input id="itm_b_influence" [(ngModel)]="report.itm_b_influence" name="itm_b_influence" class="form-control">
-              <input class="form-control">
             </fieldset>
           </div>
         </div>

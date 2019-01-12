@@ -1,0 +1,34 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'General Report'" [icon]="'fa-table'"></app-page-header>
+  <div class="row">
+    <div class="col col-xl-12 col-lg-12">
+      <div class="card mb-3">
+        <div class="card-header">
+          Reports
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>BLOTTER ENTRY NUMBER</th>
+                <th>TYPE OF INCIDENT</th>
+                <th>DATE AND TIME OF REPORTED</th>
+                <th>DATE AND TIME OF INCIDENT</th>
+                <th>PLACE OF INCIDENT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let report of reports">
+                <td>{{report.bltr_entry_num}}</td>
+                <td>{{report.incident_type.name}}</td>
+                <td>{{showDate(report.date_reported)}}</td>
+                <td>{{showDate(report.date_incident)}}</td>
+                <td>{{report.place_of_incident}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

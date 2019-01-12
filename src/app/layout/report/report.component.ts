@@ -53,9 +53,9 @@ export class ReportComponent implements OnInit {
   }
 
   submit() {
-
+    console.log(this.meridianTime,"data");
     this.report.date_reported = Moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
-    this.report.date_incident = Moment(new Date(this.date.year, this.date.month - 1, this.date.day, 0, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss')
+    this.report.date_incident = Moment(new Date(this.date.year, this.date.month - 1, this.date.day, this.meridianTime.hour, this.meridianTime.minute, 0, 0)).format('YYYY-MM-DD hh:mm:ss')
     console.log(this.report, "data");
     this.spinner.show();
     this.reportService.submitReport(this.report).then(response => {
@@ -78,7 +78,7 @@ export class ReportComponent implements OnInit {
         });
 
       }
-    })
+    }) 
   }
 
 

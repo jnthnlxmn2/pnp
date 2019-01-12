@@ -34,7 +34,7 @@ export class ReportService {
     });
   }
 
-  getIncidentType() {
+  getReport() {
     let token = this.storage.retrieve('token');
     const httpOptions = {
       headers: new HttpHeaders({
@@ -43,7 +43,7 @@ export class ReportService {
       })
     };
     return new Promise(resolve => {
-      this.http.get(this.api + "/api/admin/incident/", httpOptions)
+      this.http.get(this.api + "/api/admin/records", httpOptions)
         .subscribe(response => {
           let data: any = response;
           if (data.data) {

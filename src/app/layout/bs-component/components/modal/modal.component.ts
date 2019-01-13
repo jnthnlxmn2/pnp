@@ -11,7 +11,7 @@ export class ModalComponent {
     constructor(private modalService: NgbModal) { }
 
     open(content) {
-        this.modalService.open(content).result.then((result) => {
+        this.modalService.open(content, { size: 'lg' }).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -24,7 +24,7 @@ export class ModalComponent {
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
             return 'by clicking on a backdrop';
         } else {
-            return  `with: ${reason}`;
+            return `with: ${reason}`;
         }
     }
 }

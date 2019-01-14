@@ -54,6 +54,51 @@ export class IncidentService {
         });
     });
   }
+
+  getProvince() {
+    let token = this.storage.retrieve('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return new Promise(resolve => {
+      this.http.get(this.api + "/api/admin/province/", httpOptions)
+        .subscribe(response => {
+          let data: any = response;
+          if (data.data) {
+            resolve(data.data);
+          } else {
+            resolve(response);
+          }
+        }, err => {
+          resolve(err);
+        });
+    });
+  }
+
+  updateStatus(id, params) {
+    console.log(params,"hays");
+    let token = this.storage.retrieve('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      })
+    };
+    return new Promise(resolve => {
+      let api = this.globalservice.getAPI();
+      this.http.put(api + "/api/admin/records/" + id, params, httpOptions)
+        .subscribe(data => {
+          resolve(data);
+        }, err => {
+          resolve(err);
+        });
+    });
+  }
+
+
   deleteCustomer(id) {
     let token = this.storage.retrieve('token');
     const httpOptions = {

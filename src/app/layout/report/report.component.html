@@ -46,7 +46,9 @@
           <div class="col-xl-3">
             <fieldset class="form-group">
               <label>Place of Incident</label>
-              <input id="place_of_incident" [(ngModel)]="report.place_of_incident" name="place_of_incident" class="form-control">
+              <select id="place_of_incident" [(ngModel)]="report.place_of_incident" name="place_of_incident" class="form-control">
+                <option *ngFor="let province of provinces" value="{{province.id}}">{{province.name}}</option>
+              </select>
             </fieldset>
           </div>
         </div>
@@ -719,7 +721,8 @@
             <fieldset class="form-group">
               <label>Enter in detail the narrative of the incident or event, answering the WHO, WHEN, WHERE, WHY AND
                 HOW OF REPORTING.</label>
-              <textarea id="itm_d_narrative_report" [(ngModel)]="report.itm_d_narrative_report" name="itm_d_narrative_report"  class="form-control" rows="4"></textarea>
+              <textarea id="itm_d_narrative_report" [(ngModel)]="report.itm_d_narrative_report" name="itm_d_narrative_report"
+                class="form-control" rows="4"></textarea>
               <p class="help-block">(Details of this narrative shall be the basis in the entry of record in the police
                 blotter)</p>
             </fieldset>

@@ -21,7 +21,7 @@ export class ReportComponent implements OnInit {
   incident_type: any = [];
   date: any;
   report: any = {};
-
+  provinces:any=[];
   SecondsTime: NgbTimeStruct = { hour: 13, minute: 30, second: 30 };
   seconds = true;
 
@@ -47,6 +47,14 @@ export class ReportComponent implements OnInit {
       if (data.data) {
         this.incident_type = data.data;
         console.log(this.incident_type);
+      }
+    }, err => {
+    })
+    this.incidentService.getProvince().then(response => {
+      this.spinner.hide();
+      let data: any = response;
+      if (data.data) {
+        this.provinces = data.data;
       }
     }, err => {
     })

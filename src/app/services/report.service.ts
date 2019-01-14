@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ReportService {
   api: any = "";
-  meridianTime:any;
+  meridianTime: any;
   constructor(public http: HttpClient, public globalservice: GlobalService, public storage: LocalStorageService) {
     this.api = globalservice.getAPI();
   }
@@ -34,7 +34,7 @@ export class ReportService {
     });
   }
 
-  getReport() {
+  getReport(params) {
     let token = this.storage.retrieve('token');
     const httpOptions = {
       headers: new HttpHeaders({
@@ -43,7 +43,7 @@ export class ReportService {
       })
     };
     return new Promise(resolve => {
-      this.http.get(this.api + "/api/admin/records", httpOptions)
+      this.http.post(this.api + "/api/admin/search", params, httpOptions)
         .subscribe(response => {
           let data: any = response;
           if (data.data) {

@@ -6,15 +6,41 @@ import { Router } from '@angular/router';
 import { ReportService } from 'src/app/services/report.service';
 import swal from 'sweetalert2';
 import * as Moment from 'moment'
+import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-general-report',
   templateUrl: './general-report.component.html',
   styleUrls: ['./general-report.component.scss'],
+  styles: [`
+  .custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }
+`],
   animations: [routerTransition()]
 })
 export class GeneralReportComponent implements OnInit {
+  hoveredDate: NgbDate;
+
+  fromDate: NgbDate;
+  toDate: NgbDate;
+
   reports: any = [];
   status_incident: any = [];
   incident_type: any = [];
@@ -29,7 +55,12 @@ export class GeneralReportComponent implements OnInit {
   report: any = {};
   gender: any = '';
   closeResult: string;
-  constructor(private modalService: NgbModal, public incidentService: IncidentService, public reportService: ReportService, private spinner: NgxSpinnerService, public router: Router) { }
+  constructor(private modalService: NgbModal, public incidentService: IncidentService,
+    public reportService: ReportService, private spinner: NgxSpinnerService,
+    public router: Router, calendar: NgbCalendar) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getToday();
+  }
 
   ngOnInit() {
     let params = {};
@@ -81,6 +112,33 @@ export class GeneralReportComponent implements OnInit {
     }
   }
 
+  onDateSelection(date: NgbDate) {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+    console.log(this.fromDate, "From");
+    console.log(this.toDate, "to");
+    this.search();
+
+  }
+
+  isHovered(date: NgbDate) {
+    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
+  }
+
+  isInside(date: NgbDate) {
+    return date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate) {
+    return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
+  }
+
   search() {
     if (this.eighteen_victim == '') {
       this.eighteen_below_victim = false;
@@ -115,7 +173,9 @@ export class GeneralReportComponent implements OnInit {
       '18above_victim': this.eighteen_above_victim,
       '18below_report': this.eighteen_below_report,
       '18above_report': this.eighteen_above_report,
-      'place_of_incident': this.place_of_incident ? this.place_of_incident : ''
+      'place_of_incident': this.place_of_incident ? this.place_of_incident : '',
+      'from': Moment(new Date(this.fromDate.year, this.fromDate.month - 1, this.fromDate.day, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
+      'to': Moment(new Date(this.toDate.year, this.toDate.month - 1, this.toDate.day + 1, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
     };
 
     this.reportService.getReport(params).then(response => {

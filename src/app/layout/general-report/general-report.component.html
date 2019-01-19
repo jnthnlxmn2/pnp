@@ -10,7 +10,7 @@
             </div>
             <input type="text" [(ngModel)]="searchss" class="form-control" aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm">
-        </div>
+          </div>
         </div>
         <div class="col-xl-3">
           <fieldset class="form-group">
@@ -90,6 +90,16 @@
             </select>
           </div>
         </div>
+        <div class="col-xl-3">
+          <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+          </ngb-datepicker>
+          <ng-template #t let-date let-focused="focused">
+            <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)" [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>
+        </div>
       </div>
       <div class="card mb-6">
         <div class="card-header">
@@ -109,6 +119,7 @@
                 <th>COURT</th>
                 <th>INVESTIGATION</th>
                 <th>ACTION</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -125,7 +136,6 @@
                 <td>
                   <div class="
                 form-group">
-                    <label>Action</label>
                     <select (change)="updateStatus(index,report.id)" [(ngModel)]="status_incident[index]" class="form-control">
                       <option *ngIf="report.action_brgy == 0" value="brgy">BRGY</option>
                       <option *ngIf="report.action_prosecutor == 0" value="prosecutor">PROSECUTOR</option>
@@ -133,6 +143,8 @@
                       <option *ngIf="report.action_investigation == 0" value="investigation">INVESTIGATION</option>
                     </select>
                   </div>
+                </td>
+                <td>
                   <div class="form-group">
                     <button (click)="open(content,report)">open</button>
                   </div>

@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-  <app-page-header [heading]="'INCIDENT REPORT FORM'" [icon]="'fa-wrench'"></app-page-header>
+  <app-page-header [heading]="'Incident Record Form'" [icon]="'fa-wrench'"></app-page-header>
   <div class="container">
     <div class="card mb-3">
       <div class="card-body">
@@ -20,11 +20,10 @@
           </div>
           <div class="col-xl-3">
             <fieldset class="form-group">
-              <label>Time of Incident</label>
-              <ngb-timepicker [(ngModel)]="meridianTime" [meridian]="meridian" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
-              <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
-                Meridian - {{meridian ? "ON" : "OFF"}}
-              </button>
+              <label>Province</label>
+              <select id="place_of_incident" [(ngModel)]="report.place_of_incident" name="place_of_incident" class="form-control">
+                <option *ngFor="let province of provinces" value="{{province.id}}">{{province.name}}</option>
+              </select>
             </fieldset>
           </div>
           <div class="col-xl-3">
@@ -45,10 +44,8 @@
           </div>
           <div class="col-xl-3">
             <fieldset class="form-group">
-              <label>Place of Incident</label>
-              <select id="place_of_incident" [(ngModel)]="report.place_of_incident" name="place_of_incident" class="form-control">
-                <option *ngFor="let province of provinces" value="{{province.id}}">{{province.name}}</option>
-              </select>
+              <label>Time of Incident</label>
+              <ngb-timepicker [(ngModel)]="meridianTime" [meridian]="meridian" [ngModelOptions]="{standalone: true}"></ngb-timepicker>  
             </fieldset>
           </div>
         </div>
@@ -118,7 +115,7 @@
           <div class="col-xl-3">
             <fieldset class="form-group">
               <label>Age</label>
-              <input id="itm_a_age" [(ngModel)]="report.itm_a_age" name="itm_a_age" type="number" class="form-control">
+              <input id="itm_a_age" [(ngModel)]="report.itm_a_age" name="itm_a_age" min="1" max="123" maxlength="3"  type="number" class="form-control">
             </fieldset>
           </div>
           <div class="col-xl-3">

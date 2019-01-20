@@ -182,13 +182,13 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Blotter Entry Number</label>
-                      <input id="blotter" [(ngModel)]="report.bltr_entry_num" name="blotter" class="form-control">
+                      <input id="blotter" disabled="true" [(ngModel)]="report.bltr_entry_num" name="blotter" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Type Of Incident</label>
-                      <select id="incident_type" [(ngModel)]="report.incdnt_type_id" name="incident_type" class="form-control">
+                      <select id="incident_type" disabled="true" [(ngModel)]="report.incdnt_type_id" name="incident_type" class="form-control">
                         <option *ngFor="let incident of incident_type" value="{{incident.id}}">{{incident.name}}</option>
                       </select>
                     </fieldset>
@@ -196,13 +196,13 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Time and Date Reported</label>
-                      <input id="date_reported" [(ngModel)]="report.date_reported" name="date_reported" class="form-control">
+                      <input id="date_reported" disabled="true" [(ngModel)]="report.date_reported" name="date_reported" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Time and Date Incident</label>
-                      <input id="date_incident" [(ngModel)]="report.date_incident" name="date_incident" class="form-control">
+                      <input id="date_incident" disabled="true" [(ngModel)]="report.date_incident" name="date_incident" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
@@ -222,173 +222,173 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Family Name</label>
-                      <input id="itm_a_family_name" [(ngModel)]="report.itm_a_family_name" name="itm_a_family_name"
+                      <input id="itm_a_family_name" disabled="true" [(ngModel)]="report.itm_a_family_name" name="itm_a_family_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>First Name</label>
-                      <input id="itm_a_first_name" [(ngModel)]="report.itm_a_first_name" name="itm_a_first_name" class="form-control">
+                      <input id="itm_a_first_name" disabled="true" [(ngModel)]="report.itm_a_first_name" name="itm_a_first_name" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Middle Name</label>
-                      <input id="itm_a_middle_name" [(ngModel)]="report.itm_a_middle_name" name="itm_a_middle_name"
+                      <input id="itm_a_middle_name" disabled="true" [(ngModel)]="report.itm_a_middle_name" name="itm_a_middle_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Qualifier</label>
-                      <input id="itm_a_qualifier" [(ngModel)]="report.itm_a_qualifier" name="itm_a_qualifier" class="form-control">
+                      <input id="itm_a_qualifier" disabled="true" [(ngModel)]="report.itm_a_qualifier" name="itm_a_qualifier" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Nickname</label>
-                      <input id="itm_a_nickname" [(ngModel)]="report.itm_a_nickname" name="itm_a_nickname" class="form-control">
+                      <input id="itm_a_nickname" disabled="true" [(ngModel)]="report.itm_a_nickname" name="itm_a_nickname" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Citizenship</label>
-                      <input id="itm_a_citizenship" [(ngModel)]="report.itm_a_citizenship" name="itm_a_citizenship"
+                      <input id="itm_a_citizenship" disabled="true" [(ngModel)]="report.itm_a_citizenship" name="itm_a_citizenship"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Gender</label>
-                      <input id="itm_a_gender" [(ngModel)]="report.itm_a_gender" name="itm_a_gender" class="form-control">
+                      <input id="itm_a_gender" disabled="true" [(ngModel)]="report.itm_a_gender" name="itm_a_gender" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Civil Status</label>
-                      <input id="itm_a_civil_status" [(ngModel)]="report.itm_a_civil_status" name="itm_a_civil_status"
+                      <input id="itm_a_civil_status" disabled="true" [(ngModel)]="report.itm_a_civil_status" name="itm_a_civil_status"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Date of Birth</label>
-                      <input id="itm_a_date_of_birth" [(ngModel)]="report.itm_a_date_of_birth" name="itm_a_date_of_birth"
+                      <input id="itm_a_date_of_birth" disabled="true" [(ngModel)]="report.itm_a_date_of_birth" name="itm_a_date_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Age</label>
-                      <input id="itm_a_age" [(ngModel)]="report.itm_a_age" name="itm_a_age" type="number" class="form-control">
+                      <input id="itm_a_age" disabled="true" [(ngModel)]="report.itm_a_age" name="itm_a_age" type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Place of birth</label>
-                      <input id="itm_a_place_of_birth" [(ngModel)]="report.itm_a_place_of_birth" name="itm_a_place_of_birth"
+                      <input id="itm_a_place_of_birth" disabled="true" [(ngModel)]="report.itm_a_place_of_birth" name="itm_a_place_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Home Phone</label>
-                      <input id="itm_a_home_phone" [(ngModel)]="report.itm_a_home_phone" name="itm_a_home_phone" type="number"
+                      <input id="itm_a_home_phone" disabled="true" [(ngModel)]="report.itm_a_home_phone" name="itm_a_home_phone" type="number"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Mobile Phone</label>
-                      <input type="number" id="itm_a_mobile_phone" [(ngModel)]="report.itm_a_mobile_phone" name="itm_a_mobile_phone"
+                      <input type="number" id="itm_a_mobile_phone" disabled="true" [(ngModel)]="report.itm_a_mobile_phone" name="itm_a_mobile_phone"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Current Address</label>
-                      <input id="itm_a_address" [(ngModel)]="report.itm_a_address" name="itm_a_address" class="form-control">
+                      <input id="itm_a_address" disabled="true" [(ngModel)]="report.itm_a_address" name="itm_a_address" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_a_village" [(ngModel)]="report.itm_a_village" name="itm_a_village" class="form-control">
+                      <input id="itm_a_village" disabled="true" [(ngModel)]="report.itm_a_village" name="itm_a_village" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_a_brngy" [(ngModel)]="report.itm_a_brngy" name="itm_a_brngy" class="form-control">
+                      <input id="itm_a_brngy" disabled="true" [(ngModel)]="report.itm_a_brngy" name="itm_a_brngy" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_a_city" [(ngModel)]="report.itm_a_city" name="itm_a_city" class="form-control">
+                      <input id="itm_a_city" disabled="true" [(ngModel)]="report.itm_a_city" name="itm_a_city" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_a_province" [(ngModel)]="report.itm_a_province" name="itm_a_province" class="form-control">
+                      <input id="itm_a_province" disabled="true" [(ngModel)]="report.itm_a_province" name="itm_a_province" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Other Address</label>
-                      <input id="itm_a_address2" [(ngModel)]="report.itm_a_address2" name="itm_a_address2" class="form-control">
+                      <input id="itm_a_address2" disabled="true" [(ngModel)]="report.itm_a_address2" name="itm_a_address2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_a_village2" [(ngModel)]="report.itm_a_village2" name="itm_a_village2" class="form-control">
+                      <input id="itm_a_village2" disabled="true" [(ngModel)]="report.itm_a_village2" name="itm_a_village2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_a_brngy2" [(ngModel)]="report.itm_a_brngy2" name="itm_a_brngy2" class="form-control">
+                      <input id="itm_a_brngy2" disabled="true" [(ngModel)]="report.itm_a_brngy2" name="itm_a_brngy2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_a_city2" [(ngModel)]="report.itm_a_city2" name="itm_a_city2" class="form-control">
+                      <input id="itm_a_city2" disabled="true" [(ngModel)]="report.itm_a_city2" name="itm_a_city2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_a_province2" [(ngModel)]="report.itm_a_province2" name="itm_a_province2" class="form-control">
+                      <input id="itm_a_province2" disabled="true" [(ngModel)]="report.itm_a_province2" name="itm_a_province2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Highest Educational Attainment</label>
-                      <input id="itm_a_h_educ_attainment" [(ngModel)]="report.itm_a_h_educ_attainment" name="itm_a_h_educ_attainment"
+                      <input id="itm_a_h_educ_attainment" disabled="true" [(ngModel)]="report.itm_a_h_educ_attainment" name="itm_a_h_educ_attainment"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Occupation</label>
-                      <input id="itm_a_occupation" [(ngModel)]="report.itm_a_occupation" name="itm_a_occupation" class="form-control">
+                      <input id="itm_a_occupation" disabled="true" [(ngModel)]="report.itm_a_occupation" name="itm_a_occupation" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>ID card presented</label>
-                      <input id="itm_a_id_card_presented" [(ngModel)]="report.itm_a_id_card_presented" name="itm_a_id_card_presented"
+                      <input id="itm_a_id_card_presented" disabled="true" [(ngModel)]="report.itm_a_id_card_presented" name="itm_a_id_card_presented"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Email addrress</label>
-                      <input id="itm_a_email_address" [(ngModel)]="report.itm_a_email_address" name="itm_a_email_address"
+                      <input id="itm_a_email_address" disabled="true" [(ngModel)]="report.itm_a_email_address" name="itm_a_email_address"
                         type="email" class="form-control">
                     </fieldset>
                   </div>
@@ -402,265 +402,265 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Family Name</label>
-                      <input id="itm_b_family_name" [(ngModel)]="report.itm_b_family_name" name="itm_b_family_name"
+                      <input id="itm_b_family_name" disabled="true" [(ngModel)]="report.itm_b_family_name" name="itm_b_family_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>First Name</label>
-                      <input id="itm_b_first_name" [(ngModel)]="report.itm_b_first_name" name="itm_b_first_name" class="form-control">
+                      <input id="itm_b_first_name" disabled="true" [(ngModel)]="report.itm_b_first_name" name="itm_b_first_name" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Middle Name</label>
-                      <input id="itm_b_middle_name" [(ngModel)]="report.itm_b_middle_name" name="itm_b_middle_name"
+                      <input id="itm_b_middle_name" disabled="true" [(ngModel)]="report.itm_b_middle_name" name="itm_b_middle_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Qualifier</label>
-                      <input id="itm_b_qualifier" [(ngModel)]="report.itm_b_qualifier" name="itm_b_qualifier" class="form-control">
+                      <input id="itm_b_qualifier" disabled="true" [(ngModel)]="report.itm_b_qualifier" name="itm_b_qualifier" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Nickname</label>
-                      <input id="itm_b_nickname" [(ngModel)]="report.itm_b_nickname" name="itm_b_nickname" class="form-control">
+                      <input id="itm_b_nickname" disabled="true" [(ngModel)]="report.itm_b_nickname" name="itm_b_nickname" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Citizenship</label>
-                      <input id="itm_b_citizenship" [(ngModel)]="report.itm_b_citizenship" name="itm_b_citizenship"
+                      <input id="itm_b_citizenship" disabled="true" [(ngModel)]="report.itm_b_citizenship" name="itm_b_citizenship"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Gender</label>
-                      <input id="itm_b_gender" [(ngModel)]="report.itm_b_gender" name="itm_b_gender" class="form-control">
+                      <input id="itm_b_gender" disabled="true" [(ngModel)]="report.itm_b_gender" name="itm_b_gender" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Civil Status</label>
-                      <input id="itm_b_civil_status" [(ngModel)]="report.itm_b_civil_status" name="itm_b_civil_status"
+                      <input id="itm_b_civil_status" disabled="true" [(ngModel)]="report.itm_b_civil_status" name="itm_b_civil_status"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Date of Birth</label>
-                      <input id="itm_b_date_of_birth" [(ngModel)]="report.itm_b_date_of_birth" name="itm_b_date_of_birth"
+                      <input id="itm_b_date_of_birth" disabled="true" [(ngModel)]="report.itm_b_date_of_birth" name="itm_b_date_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Age</label>
-                      <input id="itm_b_age" [(ngModel)]="report.itm_b_age" name="itm_b_age" type="number" class="form-control">
+                      <input id="itm_b_age" disabled="true" [(ngModel)]="report.itm_b_age" name="itm_b_age" type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Place of birth</label>
-                      <input id="itm_b_place_of_birth" [(ngModel)]="report.itm_b_place_of_birth" name="itm_b_place_of_birth"
+                      <input id="itm_b_place_of_birth" disabled="true" [(ngModel)]="report.itm_b_place_of_birth" name="itm_b_place_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Home Phone</label>
-                      <input id="itm_b_home_phone" [(ngModel)]="report.itm_b_home_phone" name="itm_b_home_phone" type="number"
+                      <input id="itm_b_home_phone" disabled="true" [(ngModel)]="report.itm_b_home_phone" name="itm_b_home_phone" type="number"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Mobile Phone</label>
-                      <input id="itm_b_mobile_phone" [(ngModel)]="report.itm_b_mobile_phone" name="itm_b_mobile_phone"
+                      <input id="itm_b_mobile_phone" disabled="true" [(ngModel)]="report.itm_b_mobile_phone" name="itm_b_mobile_phone"
                         type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Current Address</label>
-                      <input id="itm_b_address" [(ngModel)]="report.itm_b_address" name="itm_b_address" class="form-control">
+                      <input id="itm_b_address" disabled="true" [(ngModel)]="report.itm_b_address" name="itm_b_address" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_b_village" [(ngModel)]="report.itm_b_village" name="itm_b_village" class="form-control">
+                      <input id="itm_b_village" disabled="true" [(ngModel)]="report.itm_b_village" name="itm_b_village" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_b_brngy" [(ngModel)]="report.itm_b_brngy" name="itm_b_brngy" class="form-control">
+                      <input id="itm_b_brngy" disabled="true" [(ngModel)]="report.itm_b_brngy" name="itm_b_brngy" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_b_city" [(ngModel)]="report.itm_b_city" name="itm_b_city" class="form-control">
+                      <input id="itm_b_city"  disabled="true" [(ngModel)]="report.itm_b_city" name="itm_b_city" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_b_province" [(ngModel)]="report.itm_b_province" name="itm_b_province" class="form-control">
+                      <input id="itm_b_province" disabled="true" [(ngModel)]="report.itm_b_province" name="itm_b_province" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Other Address</label>
-                      <input id="itm_b_address2" [(ngModel)]="report.itm_b_address2" name="itm_b_address2" class="form-control">
+                      <input id="itm_b_address2" disabled="true" [(ngModel)]="report.itm_b_address2" name="itm_b_address2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_b_village2" [(ngModel)]="report.itm_b_village2" name="itm_b_village2" class="form-control">
+                      <input id="itm_b_village2" disabled="true" [(ngModel)]="report.itm_b_village2" name="itm_b_village2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_b_brngy2" [(ngModel)]="report.itm_b_brngy2" name="itm_b_brngy2" class="form-control">
+                      <input id="itm_b_brngy2" disabled="true" [(ngModel)]="report.itm_b_brngy2" name="itm_b_brngy2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_b_city2" [(ngModel)]="report.itm_b_city2" name="itm_b_city2" class="form-control">
+                      <input id="itm_b_city2" disabled="true" [(ngModel)]="report.itm_b_city2" name="itm_b_city2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_b_province2" [(ngModel)]="report.itm_b_province2" name="itm_b_province2" class="form-control">
+                      <input id="itm_b_province2" disabled="true" [(ngModel)]="report.itm_b_province2" name="itm_b_province2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Highest Educational Attainment</label>
-                      <input id="itm_b_h_educ_attainment" [(ngModel)]="report.itm_b_h_educ_attainment" name="itm_b_h_educ_attainment"
+                      <input id="itm_b_h_educ_attainment" disabled="true" [(ngModel)]="report.itm_b_h_educ_attainment" name="itm_b_h_educ_attainment"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Occupation</label>
-                      <input id="itm_b_occupation" [(ngModel)]="report.itm_b_occupation" name="itm_b_occupation" class="form-control">
+                      <input id="itm_b_occupation" disabled="true" [(ngModel)]="report.itm_b_occupation" name="itm_b_occupation" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Work Address</label>
-                      <input id="itm_b_work_address" [(ngModel)]="report.itm_b_work_address" name="itm_b_work_address"
+                      <input id="itm_b_work_address" disabled="true" [(ngModel)]="report.itm_b_work_address" name="itm_b_work_address"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Rel to victim</label>
-                      <input id="itm_b_rel_to_victim" [(ngModel)]="report.itm_b_rel_to_victim" name="itm_b_rel_to_victim"
+                      <input id="itm_b_rel_to_victim" disabled="true" [(ngModel)]="report.itm_b_rel_to_victim" name="itm_b_rel_to_victim"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Email addrress</label>
-                      <input id="itm_b_email" [(ngModel)]="report.itm_b_email" name="itm_b_email" type="email" class="form-control">
+                      <input id="itm_b_email" disabled="true"  [(ngModel)]="report.itm_b_email" name="itm_b_email" type="email" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>If AFP/PNP PERS: RANK</label>
-                      <input id="itm_b_pnp_rank" [(ngModel)]="report.itm_b_pnp_rank" name="itm_b_pnp_rank" class="form-control">
+                      <input id="itm_b_pnp_rank" disabled="true" [(ngModel)]="report.itm_b_pnp_rank" name="itm_b_pnp_rank" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Unit Assignment</label>
-                      <input id="itm_b_unit_assignment" [(ngModel)]="report.itm_b_unit_assignment" name="itm_b_unit_assignment"
+                      <input id="itm_b_unit_assignment" disabled="true" [(ngModel)]="report.itm_b_unit_assignment" name="itm_b_unit_assignment"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Group Affiliation</label>
-                      <input id="itm_b_affiliation" [(ngModel)]="report.itm_b_affiliation" name="itm_b_affiliation"
+                      <input id="itm_b_affiliation" disabled="true" [(ngModel)]="report.itm_b_affiliation" name="itm_b_affiliation"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>With previous criminal record?</label>
-                      <input id="itm_b_criminal_record" [(ngModel)]="report.itm_b_criminal_record" name="itm_b_criminal_record"
+                      <input id="itm_b_criminal_record" disabled="true" [(ngModel)]="report.itm_b_criminal_record" name="itm_b_criminal_record"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Status of previous case</label>
-                      <input id="itm_b_stat_previous_case" [(ngModel)]="report.itm_b_stat_previous_case" name="itm_b_stat_previous_case"
+                      <input id="itm_b_stat_previous_case" disabled="true" [(ngModel)]="report.itm_b_stat_previous_case" name="itm_b_stat_previous_case"
                         type="email" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Height</label>
-                      <input id="itm_b_height" [(ngModel)]="report.itm_b_height" name="itm_b_height" class="form-control">
+                      <input id="itm_b_height" disabled="true" [(ngModel)]="report.itm_b_height" name="itm_b_height" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Weight</label>
-                      <input id="itm_b_weight" [(ngModel)]="report.itm_b_weight" name="itm_b_weight" class="form-control">
+                      <input id="itm_b_weight" disabled="true" [(ngModel)]="report.itm_b_weight" name="itm_b_weight" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Build</label>
-                      <input id="itm_b_build" [(ngModel)]="report.itm_b_build" name="itm_b_build" class="form-control">
+                      <input id="itm_b_build" disabled="true" [(ngModel)]="report.itm_b_build" name="itm_b_build" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Color of eyes</label>
-                      <input id="itm_b_color_of_eyes" [(ngModel)]="report.itm_b_color_of_eyes" name="itm_b_color_of_eyes"
+                      <input id="itm_b_color_of_eyes" disabled="true" disabled="true" [(ngModel)]="report.itm_b_color_of_eyes" name="itm_b_color_of_eyes"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Description of eyes</label>
-                      <input id="itm_b_descp_eyes" [(ngModel)]="report.itm_b_descp_eyes" name="itm_b_descp_eyes" class="form-control">
+                      <input id="itm_b_descp_eyes" disabled="true" disabled="true" [(ngModel)]="report.itm_b_descp_eyes" name="itm_b_descp_eyes" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Color of hair</label>
-                      <input id="itm_b_color_of_hair" [(ngModel)]="report.itm_b_color_of_hair" name="itm_b_color_of_hair"
+                      <input id="itm_b_color_of_hair" disabled="true" [(ngModel)]="report.itm_b_color_of_hair" name="itm_b_color_of_hair"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Description of hair</label>
-                      <input id="itm_b_color_of_hair" [(ngModel)]="report.itm_b_descp_of_hair" name="itm_b_descp_of_hair"
+                      <input id="itm_b_color_of_hair" disabled="true" [(ngModel)]="report.itm_b_descp_of_hair" name="itm_b_descp_of_hair"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Under the influence?</label>
-                      <input id="itm_b_influence" [(ngModel)]="report.itm_b_influence" name="itm_b_influence" class="form-control">
+                      <input id="itm_b_influence" disabled="true" [(ngModel)]="report.itm_b_influence" name="itm_b_influence" class="form-control">
                     </fieldset>
                   </div>
                 </div>
@@ -673,35 +673,35 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Name of guardian</label>
-                      <input id="itm_b_guardian_name" [(ngModel)]="report.itm_b_guardian_name" name="itm_b_guardian_name"
+                      <input id="itm_b_guardian_name" disabled="true" [(ngModel)]="report.itm_b_guardian_name" name="itm_b_guardian_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Guardian address</label>
-                      <input id="itm_b_guardian_address" [(ngModel)]="report.itm_b_guardian_address" name="itm_b_guardian_address"
+                      <input id="itm_b_guardian_address" disabled="true" [(ngModel)]="report.itm_b_guardian_address" name="itm_b_guardian_address"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Home Phone</label>
-                      <input id="itm_b_guardian_home_phone" [(ngModel)]="report.itm_b_guardian_home_phone" name="itm_b_guardian_home_phone"
+                      <input id="itm_b_guardian_home_phone" disabled="true" [(ngModel)]="report.itm_b_guardian_home_phone" name="itm_b_guardian_home_phone"
                         type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Mobile Phone</label>
-                      <input id="itm_b_guardian_mobile_phone" [(ngModel)]="report.itm_b_guardian_mobile_phone" name="itm_b_guardian_mobile_phone"
+                      <input id="itm_b_guardian_mobile_phone" disabled="true" [(ngModel)]="report.itm_b_guardian_mobile_phone" name="itm_b_guardian_mobile_phone"
                         type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-12">
                     <fieldset class="form-group">
                       <label>Diversion Mechanism</label>
-                      <input id="itm_b_diversion_mech" [(ngModel)]="report.itm_b_diversion_mech" name="itm_b_diversion_mech"
+                      <input id="itm_b_diversion_mech" disabled="true" [(ngModel)]="report.itm_b_diversion_mech" name="itm_b_diversion_mech"
                         type="" class="form-control">
                     </fieldset>
                   </div>
@@ -715,173 +715,173 @@
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Family Name</label>
-                      <input id="itm_c_family_name" [(ngModel)]="report.itm_c_family_name" name="itm_c_family_name"
+                      <input id="itm_c_family_name" required="true" disabled="true" [(ngModel)]="report.itm_c_family_name" name="itm_c_family_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>First Name</label>
-                      <input id="itm_c_first_name" [(ngModel)]="report.itm_c_first_name" name="itm_c_first_name" class="form-control">
+                      <input id="itm_c_first_name" disabled="true" [(ngModel)]="report.itm_c_first_name" name="itm_c_first_name" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Middle Name</label>
-                      <input id="itm_c_middle_name" [(ngModel)]="report.itm_c_middle_name" name="itm_c_middle_name"
+                      <input id="itm_c_middle_name" disabled="true" [(ngModel)]="report.itm_c_middle_name" name="itm_c_middle_name"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Qualifier</label>
-                      <input id="itm_c_qualifier" [(ngModel)]="report.itm_c_qualifier" name="itm_c_qualifier" class="form-control">
+                      <input id="itm_c_qualifier" disabled="true" [(ngModel)]="report.itm_c_qualifier" name="itm_c_qualifier" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Nickname</label>
-                      <input id="itm_c_nickname" [(ngModel)]="report.itm_c_nickname" name="itm_c_nickname" class="form-control">
+                      <input id="itm_c_nickname" disabled="true" [(ngModel)]="report.itm_c_nickname" name="itm_c_nickname" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Citizenship</label>
-                      <input id="itm_c_civil_status" [(ngModel)]="report.itm_c_civil_status" name="itm_c_civil_status"
+                      <input id="itm_c_civil_status" disabled="true" [(ngModel)]="report.itm_c_civil_status" name="itm_c_civil_status"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Gender</label>
-                      <input id="itm_c_gender" [(ngModel)]="report.itm_c_gender" name="itm_c_gender" class="form-control">
+                      <input id="itm_c_gender" disabled="true" [(ngModel)]="report.itm_c_gender" name="itm_c_gender" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Civil Status</label>
-                      <input id="itm_c_civil_status" [(ngModel)]="report.itm_c_civil_status" name="itm_c_civil_status"
+                      <input id="itm_c_civil_status" disabled="true" [(ngModel)]="report.itm_c_civil_status" name="itm_c_civil_status"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Date of Birth</label>
-                      <input id="itm_c_date_of_birth" [(ngModel)]="report.itm_c_date_of_birth" name="itm_c_date_of_birth"
+                      <input id="itm_c_date_of_birth" disabled="true" [(ngModel)]="report.itm_c_date_of_birth" name="itm_c_date_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Age</label>
-                      <input id="itm_c_age" [(ngModel)]="report.itm_c_age" name="itm_c_age" type="number" class="form-control">
+                      <input id="itm_c_age" disabled="true" [(ngModel)]="report.itm_c_age" name="itm_c_age" type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Place of birth</label>
-                      <input id="itm_c_place_of_birth" [(ngModel)]="report.itm_c_place_of_birth" name="itm_c_place_of_birth"
+                      <input id="itm_c_place_of_birth" disabled="true" [(ngModel)]="report.itm_c_place_of_birth" name="itm_c_place_of_birth"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Home Phone</label>
-                      <input id="itm_c_home_phone" [(ngModel)]="report.itm_c_home_phone" name="itm_c_home_phone" type="number"
+                      <input id="itm_c_home_phone" disabled="true" [(ngModel)]="report.itm_c_home_phone" name="itm_c_home_phone" type="number"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Mobile Phone</label>
-                      <input id="itm_c_mobile_phone" [(ngModel)]="report.itm_c_mobile_phone" name="itm_c_mobile_phone"
+                      <input id="itm_c_mobile_phone" disabled="true" [(ngModel)]="report.itm_c_mobile_phone" name="itm_c_mobile_phone"
                         type="number" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Current Address</label>
-                      <input id="itm_c_address" [(ngModel)]="report.itm_c_address" name="itm_c_address" class="form-control">
+                      <input id="itm_c_address" disabled="true" [(ngModel)]="report.itm_c_address" name="itm_c_address" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_c_village" [(ngModel)]="report.itm_c_village" name="itm_c_village" class="form-control">
+                      <input id="itm_c_village" disabled="true" [(ngModel)]="report.itm_c_village" name="itm_c_village" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_c_brngy" [(ngModel)]="report.itm_c_brngy" name="itm_c_brngy" class="form-control">
+                      <input id="itm_c_brngy" disabled="true" [(ngModel)]="report.itm_c_brngy" name="itm_c_brngy" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_c_city" [(ngModel)]="report.itm_c_city" name="itm_c_city" class="form-control">
+                      <input id="itm_c_city" disabled="true" [(ngModel)]="report.itm_c_city" name="itm_c_city" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_c_province" [(ngModel)]="report.itm_c_province" name="itm_c_province" class="form-control">
+                      <input id="itm_c_province" disabled="true" [(ngModel)]="report.itm_c_province" name="itm_c_province" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Other Address</label>
-                      <input id="itm_c_address2" [(ngModel)]="report.itm_c_address2" name="itm_c_address2" class="form-control">
+                      <input id="itm_c_address2" disabled="true" [(ngModel)]="report.itm_c_address2" name="itm_c_address2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Village</label>
-                      <input id="itm_c_village2" [(ngModel)]="report.itm_c_village2" name="itm_c_village2" class="form-control">
+                      <input id="itm_c_village2" disabled="true" [(ngModel)]="report.itm_c_village2" name="itm_c_village2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Barangay</label>
-                      <input id="itm_c_brngy2" [(ngModel)]="report.itm_c_brngy2" name="itm_c_brngy2" class="form-control">
+                      <input id="itm_c_brngy2" disabled="true" [(ngModel)]="report.itm_c_brngy2" name="itm_c_brngy2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Town/City</label>
-                      <input id="itm_c_city2" [(ngModel)]="report.itm_c_city2" name="itm_c_city2" class="form-control">
+                      <input id="itm_c_city2" disabled="true" [(ngModel)]="report.itm_c_city2" name="itm_c_city2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Province</label>
-                      <input id="itm_c_province2" [(ngModel)]="report.itm_c_province2" name="itm_c_province2" class="form-control">
+                      <input id="itm_c_province2" disabled="true" [(ngModel)]="report.itm_c_province2" name="itm_c_province2" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Highest Educational Attainment</label>
-                      <input id="itm_c_h_educ_attainment" [(ngModel)]="report.itm_c_h_educ_attainment" name="itm_c_h_educ_attainment"
+                      <input id="itm_c_h_educ_attainment" disabled="true"  [(ngModel)]="report.itm_c_h_educ_attainment" name="itm_c_h_educ_attainment"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Occupation</label>
-                      <input id="itm_c_occupation" [(ngModel)]="report.itm_c_occupation" name="itm_c_occupation" class="form-control">
+                      <input id="itm_c_occupation" disabled="true" [(ngModel)]="report.itm_c_occupation" name="itm_c_occupation" class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Work Address</label>
-                      <input id="itm_c_work_address" [(ngModel)]="report.itm_c_work_address" name="itm_c_work_address"
+                      <input id="itm_c_work_address" disabled="true" [(ngModel)]="report.itm_c_work_address" name="itm_c_work_address"
                         class="form-control">
                     </fieldset>
                   </div>
                   <div class="col-xl-6">
                     <fieldset class="form-group">
                       <label>Email addrress</label>
-                      <input id="itm_c_email_address" [(ngModel)]="report.itm_c_email_address" name="itm_c_email_address"
+                      <input id="itm_c_email_address" disabled="true" [(ngModel)]="report.itm_c_email_address" name="itm_c_email_address"
                         type="email" class="form-control">
                     </fieldset>
                   </div>
@@ -897,7 +897,7 @@
                       <label>Enter in detail the narrative of the incident or event, answering the WHO, WHEN, WHERE,
                         WHY AND
                         HOW OF REPORTING.</label>
-                      <textarea id="itm_d_narrative_report" [(ngModel)]="report.itm_d_narrative_report" name="itm_d_narrative_report"
+                      <textarea id="itm_d_narrative_report" disabled="true" [(ngModel)]="report.itm_d_narrative_report" name="itm_d_narrative_report"
                         class="form-control" rows="4"></textarea>
                       <p class="help-block">(Details of this narrative shall be the basis in the entry of record in
                         the

@@ -5,18 +5,30 @@
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
         <a [routerLink]="['/report']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
-            <span>{{ 'Report' | translate }}</span>
+            <i class="fa fa-fw fa fa-file-text"></i>&nbsp;
+            <span>{{ 'Record Form' | translate }}</span>
         </a>
         <a [routerLink]="['/general-report']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+            <i class="fa fa-fw fa fa-folder-open"></i>&nbsp;
             <span>{{ 'General Report' | translate }}</span>
         </a>
         <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
             <span>{{ 'Charts' | translate }}</span>
         </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/#']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa fa-child"></i>&nbsp;
+            <span>{{ 'WCPS' | translate }}</span>
+        </a>
+        <a [routerLink]="['/#']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa fa-tasks"></i>&nbsp;
+            <span>{{ 'Rate' | translate }}</span>
+        </a>
+        <a [routerLink]="['/#']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa fa-user-o"></i>&nbsp;
+            <span>{{ 'Users' | translate }}</span>
+        </a>
+        <!----<a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-table"></i>&nbsp;
             <span>{{ 'Tables' | translate }}</span>
         </a>
@@ -72,7 +84,7 @@
         <a href="http://www.strapui.com/" class="list-group-item">
             <i class="fa fa-caret-down"></i>&nbsp;
             <span>{{ 'More Themes' | translate }}</span>
-        </a>
+        </a> -->
 
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">

@@ -9,10 +9,13 @@ $topnav-background-color: #222;
     right: 0;
     bottom: 0;
     overflow: auto;
-    background: $topnav-background-color;
+    background-image: url("/assets/images/irmsBG.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     color: #fff;
     padding: 3em;
+
     .col-lg-4 {
         padding: 0;
     }

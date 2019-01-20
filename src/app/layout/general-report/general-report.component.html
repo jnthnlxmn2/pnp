@@ -12,8 +12,16 @@
               aria-describedby="inputGroup-sizing-sm">
           </div>
         </div>
-        <div class="col-xl-3">
+        <div class="col-xl-12">
           <fieldset class="form-group">
+            <label>WCSPS</label>
+            <br>
+            <button type="button" (click)="wdsps=true;wdspssearch()" *ngIf="!wdsps" class="btn btn-primary btn-sm">ON</button>
+            <button type="button" *ngIf="wdsps" (click)="wdsps=false" class="btn btn-secondary btn-sm">OFF</button>
+          </fieldset>
+        </div>
+        <div class="col-xl-3">
+          <fieldset class="form-group" *ngIf="!wdsps">
             <label>Gender</label>
             <div class="radio">
               <label>
@@ -36,7 +44,7 @@
           </fieldset>
         </div>
         <div class="col-xl-3">
-          <fieldset class="form-group">
+          <fieldset class="form-group" *ngIf="!wdsps">
             <label>Age of Victim</label>
             <div class="radio">
               <label>
@@ -59,7 +67,7 @@
           </fieldset>
         </div>
         <div class="col-xl-3">
-          <fieldset class="form-group">
+          <fieldset class="form-group" *ngIf="!wdsps">
             <label>Age of Reporing person</label>
             <div class="radio">
               <label>
@@ -91,9 +99,15 @@
           </div>
         </div>
         <div class="col-xl-3">
-          <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+          <fieldset class="form-group">
+            <label>Date Filtering</label>
+            <br>
+            <button type="button" (click)="datefilter=true;search()" *ngIf="!datefilter" class="btn btn-primary btn-sm">ON</button>
+            <button type="button" *ngIf="datefilter" (click)="datefilter=false" class="btn btn-secondary btn-sm">OFF</button>
+          </fieldset>
+          <ngb-datepicker #dp  *ngIf="datefilter" (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
           </ngb-datepicker>
-          <ng-template #t let-date let-focused="focused">
+          <ng-template #t  *ngIf="datefilter" let-date let-focused="focused">
             <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)" [class.faded]="isHovered(date) || isInside(date)"
               (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
               {{ date.day }}

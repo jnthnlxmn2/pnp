@@ -40,7 +40,7 @@ export class GeneralReportComponent implements OnInit {
 
   fromDate: NgbDate;
   toDate: NgbDate;
-
+  datefilter: any = false;
   reports: any = [];
   status_incident: any = [];
   incident_type: any = [];
@@ -51,6 +51,7 @@ export class GeneralReportComponent implements OnInit {
   eighteen_below_report: any = false;
   eighteen_above_report: any = false;
   provinces: any = [];
+  wdsps: any = false;
   place_of_incident: any = '';
   report: any = {};
   gender: any = '';
@@ -100,6 +101,45 @@ export class GeneralReportComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  wdspssearch() {
+    let params = {};
+
+    if (this.datefilter) {
+
+      params = {
+        'gender': this.gender ? this.gender : '',
+        '18below_victim': this.eighteen_below_victim,
+        '18above_victim': this.eighteen_above_victim,
+        '18below_report': this.eighteen_below_report,
+        '18above_report': this.eighteen_above_report,
+        'place_of_incident': this.place_of_incident ? this.place_of_incident : '',
+        'from': Moment(new Date(this.fromDate.year, this.fromDate.month - 1, this.fromDate.day, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
+        'to': Moment(new Date(this.toDate.year, this.toDate.month - 1, this.toDate.day + 1, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
+      };
+
+    }
+    else {
+
+      params = {
+        'gender': this.gender ? this.gender : '',
+        '18below_victim': this.eighteen_below_victim,
+        '18above_victim': this.eighteen_above_victim,
+        '18below_report': this.eighteen_below_report,
+        '18above_report': this.eighteen_above_report,
+        'place_of_incident': this.place_of_incident ? this.place_of_incident : ''
+      };
+    }
+    this.reportService.getReport(params).then(response => {
+      this.spinner.hide();
+      let data: any = response;
+      if (data) {
+        this.reports = data;
+        console.log(this.reports);
+      }
+    }, err => {
+    })
   }
 
   private getDismissReason(reason: any): string {
@@ -164,19 +204,33 @@ export class GeneralReportComponent implements OnInit {
       this.eighteen_below_report = false;
       this.eighteen_above_report = 'true';
     }
+    let params = {};
+    if (this.datefilter) {
 
+      params = {
+        'gender': this.gender ? this.gender : '',
+        '18below_victim': this.eighteen_below_victim,
+        '18above_victim': this.eighteen_above_victim,
+        '18below_report': this.eighteen_below_report,
+        '18above_report': this.eighteen_above_report,
+        'place_of_incident': this.place_of_incident ? this.place_of_incident : '',
+        'from': Moment(new Date(this.fromDate.year, this.fromDate.month - 1, this.fromDate.day, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
+        'to': Moment(new Date(this.toDate.year, this.toDate.month - 1, this.toDate.day + 1, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
+      };
 
+    }
+    else {
 
-    let params = {
-      'gender': this.gender ? this.gender : '',
-      '18below_victim': this.eighteen_below_victim,
-      '18above_victim': this.eighteen_above_victim,
-      '18below_report': this.eighteen_below_report,
-      '18above_report': this.eighteen_above_report,
-      'place_of_incident': this.place_of_incident ? this.place_of_incident : '',
-      'from': Moment(new Date(this.fromDate.year, this.fromDate.month - 1, this.fromDate.day, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
-      'to': Moment(new Date(this.toDate.year, this.toDate.month - 1, this.toDate.day + 1, 1, 0, 0, 0)).format('YYYY-MM-DD hh:mm:ss'),
-    };
+      params = {
+        'gender': this.gender ? this.gender : '',
+        '18below_victim': this.eighteen_below_victim,
+        '18above_victim': this.eighteen_above_victim,
+        '18below_report': this.eighteen_below_report,
+        '18above_report': this.eighteen_above_report,
+        'place_of_incident': this.place_of_incident ? this.place_of_incident : ''
+      };
+    }
+
 
     this.reportService.getReport(params).then(response => {
       this.spinner.hide();

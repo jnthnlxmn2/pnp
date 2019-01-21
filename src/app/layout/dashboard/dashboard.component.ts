@@ -42,6 +42,21 @@ export class DashboardComponent implements OnInit {
     public pieChartType: any = 'pie';
     doughnutChartType = 'doughnut';
     data: any = {};
+    provinces: any = [];
+    polarAreaChartType: any = 'polarArea';
+
+    public polarAreaChartLabels: string[] = [
+        'Zambales', 'Tarlac', 'Pampanga', 'Nueva Ecija', 'Bulacan', 'Bataan', 'Aurora'
+    ];
+    Zambales: any = 0;
+    Tarlac: any = 0;
+    Pampanga: any = 0;
+    NuevaEcija: any = 0;
+    Bulacan: any = 0;
+    Bataan: any = 0;
+    Aurora: any = 0;
+    public polarAreaChartData: number[] = [this.Zambales, this.Tarlac, this.Pampanga, this.NuevaEcija, this.Bulacan, this.Bataan, this.Aurora];
+    public polarAreaLegend: boolean;
     // events
     public chartClicked(e: any): void {
         // console.log(e);
@@ -103,6 +118,16 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        this.incidentService.getProvince().then(response => {
+            let data: any = response;
+            if (data.data) {
+                this.provinces = data.data;
+            }
+        }, err => {
+        })
+
+
         let year: any = Moment().format('YYYY');
         let from = Moment().format(year + '-' + 1 + '-' + 1 + ' ' + 0 + ':' + 0 + ':' + 0);
         let to = Moment().format(year + '-' + 12 + '-' + 31 + ' ' + 0 + ':' + 0 + ':' + 0);
@@ -115,61 +140,92 @@ export class DashboardComponent implements OnInit {
             let data: any = response;
             if (data) {
                 this.reports = data;
-                this.reports.forEach(age => {
-                    console.log(age.itm_c_age)
-                    if (age.itm_c_age) {
-                        if (age.itm_c_age >= 18) {
+                this.reports.forEach(report => {
+                    console.log(report.itm_c_age)
+                    if (report.itm_c_age) {
+                        if (report.itm_c_age >= 18) {
                             this.overage = this.overage + 1;
                         } else {
-                            if (age.itm_c_age <= 18) {
+                            if (report.itm_c_age <= 18) {
                                 this.underage = this.underage + 1;
                             }
                         }
                     } else {
-                        if (age.itm_a_age >= 18) {
+                        if (report.itm_a_age >= 18) {
                             this.overage = this.overage + 1;
                         } else {
-                            if (age.itm_a_age <= 18) {
+                            if (report.itm_a_age <= 18) {
                                 this.underage = this.underage + 1;
                             }
                         }
                     }
 
 
-                    if (age.itm_c_gender) {
-                        if (age.itm_c_gender == 'Male') {
+                    if (report.itm_c_gender) {
+                        if (report.itm_c_gender == 'Male') {
                             this.male = this.male + 1;
                         } else {
-                            if (age.itm_c_gender == 'Female') {
+                            if (report.itm_c_gender == 'Female') {
                                 this.female = this.female + 1;
                             }
                         }
                     } else {
-                        if (age.itm_a_gender == 'Male') {
+                        if (report.itm_a_gender == 'Male') {
                             this.male = this.male + 1;
                         } else {
-                            if (age.itm_a_gender == 'Female') {
+                            if (report.itm_a_gender == 'Female') {
                                 this.female = this.female + 1;
                             }
                         }
                     }
 
 
-                    if (age.action_brgy) {
+                    if (report.action_brgy) {
                         this.brgy = this.brgy + 1;
                     }
-                    if (age.action_prosecutor) {
+                    if (report.action_prosecutor) {
                         this.prosecutor = this.prosecutor + 1;
                     }
-                    if (age.action_court) {
+                    if (report.action_court) {
                         this.court = this.court + 1;
                     }
-                    if (age.action_investigation) {
+                    if (report.action_investigation) {
                         this.investigator = this.investigator + 1;
                     }
 
 
+
+                    if (report.incident_place.name == 'Zambales') {
+                        this.Zambales = this.Zambales + 1;
+                    }
+                    if (report.incident_place.name == 'Tarlac') {
+                        this.Tarlac = this.Tarlac + 1;
+                    }
+
+                    if (report.incident_place.name == 'Pampanga') {
+                        this.Pampanga = this.Pampanga + 1;
+                    }
+
+                    if (report.incident_place.name == 'Nueva Ecija') {
+                        this.NuevaEcija = this.NuevaEcija + 1;
+                    }
+
+                    if (report.incident_place.name == 'Bulacan') {
+                        this.Bulacan = this.Bulacan + 1;
+                    }
+
+                    if (report.incident_place.name == 'Bataan') {
+                        this.Bataan = this.Bataan + 1;
+                    }
+
+                    if (report.incident_place.name == 'Aurora') {
+                        this.Aurora = this.Aurora + 1;
+                    }
+
+
+
                 });
+                this.polarAreaChartData = [this.Zambales, this.Tarlac, this.Pampanga, this.NuevaEcija, this.Bulacan, this.Bataan, this.Aurora]
                 this.doughnutChartData = [this.brgy, this.prosecutor, this.court, this.investigator];
                 this.pieChartData = [this.overage, this.underage];
                 this.pieChartData2 = [this.male, this.female];

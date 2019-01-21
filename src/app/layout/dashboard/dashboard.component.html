@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="col col-sm-12">
+        <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
                     This year report status
@@ -68,6 +68,17 @@
                 </div>
             </div>
         </div>
+        <div class="col col-sm-6">
+                <div class="card mb-3">
+                    <div class="card-header">
+                            This year record base on provinces
+                    </div>
+                    <div class="card-body">
+                        <canvas baseChart height="180px" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
     </div>
     <div class="row">
         <div class="col-lg-8">

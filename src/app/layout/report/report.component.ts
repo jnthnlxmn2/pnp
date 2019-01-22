@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { ReportService } from 'src/app/services/report.service';
 import swal from 'sweetalert2';
 import * as Moment from 'moment'
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-report',
@@ -21,10 +22,10 @@ export class ReportComponent implements OnInit {
   incident_type: any = [];
   date: any;
   report: any = {};
-  provinces:any=[];
+  provinces: any = [];
   SecondsTime: NgbTimeStruct = { hour: 13, minute: 30, second: 30 };
   seconds = true;
-
+  me: any = {};
   customTime: NgbTimeStruct = { hour: 13, minute: 30, second: 0 };
   hourStep = 1;
   minuteStep = 15;
@@ -38,7 +39,7 @@ export class ReportComponent implements OnInit {
     this.meridian = !this.meridian;
   }
 
-  constructor(public incidentService: IncidentService, public reportService: ReportService, private spinner: NgxSpinnerService, public router: Router) { }
+  constructor(public userservice: UserService, public incidentService: IncidentService, public reportService: ReportService, private spinner: NgxSpinnerService, public router: Router) { }
   ngOnInit() {
     this.spinner.show();
     this.incidentService.getIncidentType().then(response => {
@@ -58,14 +59,21 @@ export class ReportComponent implements OnInit {
       }
     }, err => {
     })
+    this.userservice.getMe().then((response) => {
+      let data: any = response;
+      if (data.data) {
+        this.me = data.data;
+      }
+    })
   }
 
   submit() {
-    console.log(this.meridianTime,"data");
+    console.log(this.meridianTime, "data");
     this.report.date_reported = Moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
     this.report.date_incident = Moment(new Date(this.date.year, this.date.month - 1, this.date.day, this.meridianTime.hour, this.meridianTime.minute, 0, 0)).format('YYYY-MM-DD hh:mm:ss')
     console.log(this.report, "data");
     this.spinner.show();
+    this.report.aut_name_of_desk_officer = this.me.id;
     this.reportService.submitReport(this.report).then(response => {
       let data: any = response;
       if (data.data) {
@@ -86,7 +94,7 @@ export class ReportComponent implements OnInit {
         });
 
       }
-    }) 
+    })
   }
 
 

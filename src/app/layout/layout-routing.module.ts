@@ -12,6 +12,8 @@ const routes: Routes = [
             { path: 'dashboard', canActivate: [AuthGuard], loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'report', canActivate: [AuthGuard], loadChildren: './report/report.module#ReportModule' },
             { path: 'general-report', canActivate: [AuthGuard], loadChildren: './general-report/general-report.module#GeneralReportModule' },
+            { path: 'report', canActivate: [AuthGuard], loadChildren: './report/report.module#ReportModule' },
+            { path: 'user', canActivate: [AuthGuard], loadChildren: './user/user.module#UserModule' },
             { path: 'charts', canActivate: [AuthGuard], loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', canActivate: [AuthGuard], loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', canActivate: [AuthGuard], loadChildren: './form/form.module#FormModule' },
@@ -27,4 +29,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class LayoutRoutingModule {}
+export class LayoutRoutingModule { }

@@ -1,0 +1,101 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Officers'" [icon]="'fa-user'"></app-page-header>
+  <div class="container" *ngIf="me.user_type_id == 1">
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>Rank </label>
+              <select id="rank" [(ngModel)]="user.rank" name="rank" class="form-control">
+                <option value="PCSUP">PCSUP</option>
+                <option value="PSSUP">PSSUP</option>
+                <option value="PSUP">PSUP</option>
+                <option value="PCINSP">PCINSP</option>
+                <option value="INSP">INSP</option>
+                <option value="PNCO">PNCO</option>
+                <option value="SPO5">SPO5</option>
+                <option value="SPO4">SPO4</option>
+                <option value="SPO3">SPO3</option>
+                <option value="SPO2">SPO2</option>
+                <option value="SPO1">SPO1</option>
+                <option value="PO3">PO3</option>
+                <option value="PO2">PO2</option>
+                <option value="PO1">PO1</option>
+              </select>
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>FIRST NAME</label>
+              <input id="first_name" [(ngModel)]="user.first_name" name="first_name" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>INITIAL</label>
+              <input id="initial" [(ngModel)]="user.initial" name="initial" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>SURNAME</label>
+              <input id="surname" [(ngModel)]="user.surname" name="surname" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>EMAIL</label>
+              <input id="email" [(ngModel)]="user.email" type="email" name="first_name" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>PASSOWRD</label>
+              <input id="password" [(ngModel)]="user.password" name="password" type="password" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>CONFIRM PASSWORD</label>
+              <input id="c_password" [(ngModel)]="user.c_password" name="c_password" type="password" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-xl-12">
+            <fieldset class="form-group">
+              <button (click)="submit()" class="btn btn-success">
+                REGISTER
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-6">
+      <div class="card-header">
+        Users
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>RANK</th>
+              <th>FULL NAME</th>
+              <th>EMAIL</th>
+              <th>USER TYPE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let use of users | paginate: { itemsPerPage: 10, currentPage: p }">
+              <td>{{use.rank}}</td>
+              <td>{{use.name}} {{use.initial}}. {{use.surname}}</td>
+              <td>{{use.email}}</td>
+              <td>{{use.user_type.role}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

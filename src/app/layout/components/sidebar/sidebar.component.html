@@ -24,7 +24,7 @@
             <i class="fa fa-fw fa fa-tasks"></i>&nbsp;
             <span>{{ 'Rate' | translate }}</span>
         </a>
-        <a [routerLink]="['/#']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/user']" *ngIf="me.user_type_id == 1" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa fa-user-o"></i>&nbsp;
             <span>{{ 'Users' | translate }}</span>
         </a>

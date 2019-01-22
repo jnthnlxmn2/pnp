@@ -105,9 +105,10 @@
             <button type="button" (click)="datefilter=true;search()" *ngIf="!datefilter" class="btn btn-primary btn-sm">ON</button>
             <button type="button" *ngIf="datefilter" (click)="datefilter=false" class="btn btn-secondary btn-sm">OFF</button>
           </fieldset>
-          <ngb-datepicker #dp  [hidden]="!datefilter" (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+          <ngb-datepicker #dp [hidden]="!datefilter" (select)="onDateSelection($event)" [displayMonths]="2"
+            [dayTemplate]="t" outsideDays="hidden">
           </ngb-datepicker>
-          <ng-template #t  let-date let-focused="focused">
+          <ng-template #t let-date let-focused="focused">
             <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)" [class.faded]="isHovered(date) || isInside(date)"
               (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
               {{ date.day }}
@@ -210,6 +211,12 @@
                       <label>Place of Incident</label>
                       <input id="place_of_incident" disabled="true" [(ngModel)]="report.incident_place.name" name="place_of_incident"
                         class="form-control">
+                    </fieldset>
+                  </div>
+                  <div class="col-xl-12">
+                    <fieldset class="form-group">
+                      <label>DESK OFFICER</label>
+                      <h6>{{report.desk_officer.rank}} {{report.desk_officer.name}} {{report.desk_officer.initial}} {{report.desk_officer.surname}}</h6>
                     </fieldset>
                   </div>
                 </div>

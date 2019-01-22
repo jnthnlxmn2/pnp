@@ -2,6 +2,7 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
     selector: 'app-sidebar',
@@ -13,12 +14,13 @@ export class SidebarComponent implements OnInit {
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
-
+    me: any = {};
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
     constructor(private translate: TranslateService,
-                public router: Router,
-                public authservice: AuthService) {
+        public router: Router,
+        public authservice: AuthService,
+        public userservice: UserService) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
         const browserLang = this.translate.getBrowserLang();
@@ -40,6 +42,12 @@ export class SidebarComponent implements OnInit {
         this.collapsed = false;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
+        this.userservice.getMe().then((response) => {
+            let data: any = response;
+            if (data.data) {
+                this.me = data.data;
+            }
+        })
     }
 
 

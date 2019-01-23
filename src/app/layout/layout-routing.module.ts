@@ -11,6 +11,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix', canActivate: [AuthGuard] },
             { path: 'dashboard', canActivate: [AuthGuard], loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'report', canActivate: [AuthGuard], loadChildren: './report/report.module#ReportModule' },
+            { path: 'wcps', canActivate: [AuthGuard], loadChildren: './wcps/wcps.module#WcpsModule' },
             { path: 'general-report', canActivate: [AuthGuard], loadChildren: './general-report/general-report.module#GeneralReportModule' },
             { path: 'report', canActivate: [AuthGuard], loadChildren: './report/report.module#ReportModule' },
             { path: 'user', canActivate: [AuthGuard], loadChildren: './user/user.module#UserModule' },

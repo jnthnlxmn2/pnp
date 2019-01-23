@@ -1,0 +1,53 @@
+<div class="card-body table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>BLOTTER ENTRY NUMBER</th>
+        <th>DATE AND TIME OF INCIDENT</th>
+        <th>PLACE OF INCIDENT</th>
+        <th>NAME OF THE VICTIM</th>
+        <th>AGE OF THE VICTIM</th>
+        <th>SEX OF THE VICTIM</th>
+        <th>NATIONALITY OF THE VICTIM</th>
+        <th>NAME OF THE SUSPECT</th>
+        <th>AGE OF THE SUSPECT</th>
+        <th>SEX OF THE SUSPECT</th>
+        <th>NATIONALITY OF THE SUSPECT</th>
+        <th>TYPE OF INCIDENT</th>
+        <th>INVESTIGATOR ON CASE</th>
+        <th>ACTION</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports | paginate: { itemsPerPage: 10, currentPage: p } | search:searchss  ">
+        <td>{{report.bltr_entry_num}}</td>
+        <td>{{report.incident_type.name}}</td>
+        <td>{{showDate(report.date_reported)}}</td>
+        <td>{{showDate(report.date_incident)}}</td>
+        <td>{{report.incident_place.name}}</td>
+        <td>{{showX(report.action_brgy)}}</td>
+        <td>{{showX(report.action_prosecutor)}}</td>
+        <td>{{showX(report.action_court)}}</td>
+        <td>{{showX(report.action_investigation)}}</td>
+        <td>
+          <div class="
+        form-group">
+            <select (change)="updateStatus(index,report.id)" [(ngModel)]="status_incident[index]" class="form-control">
+              <option *ngIf="report.action_brgy == 0" value="brgy">BRGY</option>
+              <option *ngIf="report.action_prosecutor == 0" value="prosecutor">PROSECUTOR</option>
+              <option *ngIf="report.action_court == 0" value="court">COURT</option>
+              <option *ngIf="report.action_investigation == 0" value="investigation">INVESTIGATION</option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <button (click)="open(content,report)">open</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

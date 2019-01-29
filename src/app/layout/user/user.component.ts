@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { routerTransition } from '../../router.animations';
 import swal from 'sweetalert2';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  styleUrls: ['./user.component.scss'],
+  animations: [routerTransition()]
 })
 export class UserComponent implements OnInit {
   user: any = {};

@@ -115,6 +115,9 @@
             </span>
           </ng-template>
         </div>
+        <div class="col-xl-3">
+          <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o" style="font-size:48px;color:blue"></i></button>
+        </div>
       </div>
       <div class="card mb-6">
         <div class="card-header">
@@ -216,7 +219,8 @@
                   <div class="col-xl-12">
                     <fieldset class="form-group">
                       <label>DESK OFFICER</label>
-                      <h6>{{report.desk_officer.rank}} {{report.desk_officer.name}} {{report.desk_officer.initial}} {{report.desk_officer.surname}}</h6>
+                      <h6>{{report.desk_officer.rank}} {{report.desk_officer.name}} {{report.desk_officer.initial}}
+                        {{report.desk_officer.surname}}</h6>
                     </fieldset>
                   </div>
                 </div>

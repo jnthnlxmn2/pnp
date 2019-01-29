@@ -61,6 +61,15 @@
               <input id="c_password" [(ngModel)]="user.c_password" name="c_password" type="password" class="form-control">
             </fieldset>
           </div>
+          <div class="col-xl-3">
+            <fieldset class="form-group">
+              <label>Rank </label>
+              <select id="type" [(ngModel)]="user.user_type_id" name="type" class="form-control">
+                <option value="2">OFFICER</option>
+                <option value="1">ADMIN</option>
+              </select>
+            </fieldset>
+          </div>
           <div class="col-xl-12">
             <fieldset class="form-group">
               <button (click)="submit()" class="btn btn-success">

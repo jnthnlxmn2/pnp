@@ -9,6 +9,7 @@ import * as Moment from 'moment'
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ExcelService } from 'src/app/services/excel.service';
 
 @Component({
   selector: 'app-general-report',
@@ -37,7 +38,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class GeneralReportComponent implements OnInit {
   hoveredDate: NgbDate;
-
+  readytogo: any = [];
   fromDate: NgbDate;
   toDate: NgbDate;
   datefilter: any = false;
@@ -56,7 +57,7 @@ export class GeneralReportComponent implements OnInit {
   report: any = {};
   gender: any = '';
   closeResult: string;
-  constructor(private modalService: NgbModal, public incidentService: IncidentService,
+  constructor(public excelService: ExcelService, private modalService: NgbModal, public incidentService: IncidentService,
     public reportService: ReportService, private spinner: NgxSpinnerService,
     public router: Router, calendar: NgbCalendar) {
     this.fromDate = calendar.getToday();
@@ -101,6 +102,22 @@ export class GeneralReportComponent implements OnInit {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  exportAsXLSX(): void {
+    this.reports.forEach(report => {
+      let object: any = {};
+      object.BLOTTER_ENTRY_NUMBER = report.bltr_entry_num;
+      object.TYPE_OF_INCIDENT = report.incident_type.name;
+      object.DATE_REPORTED = report.date_reported;
+      object.SURNAME = report.itm_a_family_name;
+      object.FIRST_NAME = report.itm_a_first_name;
+      object.GENDER = report.itm_a_gender;
+      object.AGE = report.itm_a_age;
+      object.PROVINCE = report.itm_a_province;
+      this.readytogo.push(object);
+    });
+    this.excelService.exportAsExcelFile(this.readytogo, 'report');
   }
 
   wdspssearch() {

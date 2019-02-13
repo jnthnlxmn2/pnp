@@ -60,6 +60,40 @@ export class AuthService {
         });
     });
   }
+
+
+  entryChange(email, password) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    let param = JSON.stringify({
+      email: email,
+      password: password,
+    });
+    return new Promise(resolve => {
+      this.http.post(this.api + "/api/login", param, httpOptions)
+        .subscribe(response => {
+          console.log(response, "Token");
+          let data: any = response;
+          if (data.success) {
+            this.storage.store('token', data.success.token);
+            this.userservice.getMe().then(response => {
+              let data: any = response;
+              if (data.data) {
+                this.me = data.data;
+                console.log(this.me)
+              }
+            })
+          }
+          resolve(response);
+        }, err => {
+          resolve(err);
+        });
+    });
+  }
+
   changePassword(password) {
     let token = this.storage.retrieve('token');
     const httpOptions = {

@@ -115,6 +115,9 @@
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
                     </a> -->
+                    <a class="dropdown-item" (click)="open(content)">
+                        <i class="fa fa-fw fa-gear"></i> {{ 'Change Password' | translate }}
+                    </a>
                     <a class="dropdown-item" [routerLink]="['/login']" (click)="onLoggedout()">
                         <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
                     </a>
@@ -123,3 +126,39 @@
         </ul>
     </div>
 </nav>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Change Password</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-xl-3">
+                <fieldset class="form-group">
+                    <label>OLD PASSOWRD</label>
+                    <input id="old_password" [(ngModel)]="old_password" name="old_password" type="password" class="form-control">
+                </fieldset>
+            </div>
+            <div class="col-xl-3">
+                <fieldset class="form-group">
+                    <label>NEW PASSOWRD</label>
+                    <input id="new_password" [(ngModel)]="new_password" name="new_password" type="password" class="form-control">
+                </fieldset>
+            </div>
+            <div class="col-xl-3">
+                <fieldset class="form-group">
+                    <label>CONFIRM PASSWORD</label>
+                    <input id="c_password" [(ngModel)]="c_password" name="c_password" type="password" class="form-control">
+                </fieldset>
+            </div>
+        </div>
+        <h3 style="color:red">{{promt}}</h3>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="change()">Proceed</button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click');promt='';new_password='';c_password='';old_password='';">Cancel</button>
+    </div>
+</ng-template>
